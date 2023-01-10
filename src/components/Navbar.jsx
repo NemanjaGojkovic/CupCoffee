@@ -6,7 +6,7 @@ function Navbar(){
         
         <nav className="navigation-menu">
           <h1 className='title'>CupCoffee</h1>
-          <a href="#"> Pocetna</a>
+          <a href="#"> Početna</a>
           <a href="#"> Proizvodi</a>
           <a href="#"> Kontakt</a>
         </nav>
