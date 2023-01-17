@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Navbar(){
+function Navbar({numFavorite}){
     return (
     <div className="inner-width">  
         <nav className="navigation-menu">
@@ -8,6 +8,7 @@ function Navbar(){
           <a href="#"> Početna</a>
           <a href="#"> Proizvodi</a>
           <a href="#"> Kontakt</a>
+          <a href="#" className='fav'> Omiljeno <div className='numFav'>{numFavorite}</div></a>
         </nav>
       </div>
 

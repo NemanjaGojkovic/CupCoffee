@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import Products from './components/Products';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {useState} from 'react'
 
 function App() {
 
@@ -47,16 +48,34 @@ function App() {
     }
   ]
 
+  let ids = []
+  const [numFav, setNumFav]=useState(0)
+  
+  const addRemoveFavorites = (id) =>{
+    if(ids.includes(id)){
+      setNumFav(numFav-1)
+      let pom = ids.indexOf(id)
+      ids.splice(pom, 1)
+      return
+    }
+    setNumFav(numFav+1)
+    ids.push(id)
+    
+  }
+
   return (
     <>
     <BrowserRouter>
-      <Navbar></Navbar>
+      <Navbar numFavorite={numFav}></Navbar>
         <Routes>
           <Route path='/' element={
             <Body/>
           }/>
           <Route path='/products' element={
-            <Products products={products}/>
+            <Products products={products} addRemoveFavorites={addRemoveFavorites}/>
+          }/>
+          <Route path='/favorites' element={
+            <Body/>
           }/>
         </Routes>
       <Footer></Footer>
