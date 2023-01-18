@@ -1,14 +1,15 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 function Navbar({numFavorite}){
     return (
     <div className="inner-width">  
         <nav className="navigation-menu">
           <h1 className='title'>CupCoffee</h1>
-          <a href="#"> Početna</a>
-          <a href="#"> Proizvodi</a>
-          <a href="#"> Kontakt</a>
-          <a href="#" className='fav'> Omiljeno <div className='numFav'>{numFavorite}</div></a>
+          <Link to="/"> Početna</Link>
+          <Link to="/products"> Proizvodi</Link>
+          <Link to="/contact"> Kontakt</Link>
+          <Link to="/favorites" className='fav'> Omiljeno <div className='numFav'>{numFavorite}</div></Link>
         </nav>
       </div>
 
