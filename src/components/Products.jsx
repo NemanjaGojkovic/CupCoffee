@@ -1,11 +1,11 @@
 import React from 'react'
 import Product from './Product'
 
-function Products({products, addRemoveFavorites}){
+function Products({products, addFavorites, removeFavorite}){
     return (
         <div className='products'>
             {products.map((product)=>(
-                <Product product={product} addRemoveFavorites={addRemoveFavorites}/>
+                <Product product={product} addFavorites={addFavorites} removeFavorite={removeFavorite}/>
             ))}
         </div>
     )
